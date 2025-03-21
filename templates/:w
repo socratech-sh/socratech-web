@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RFC-Style Blog</title>
+    <style>
+        /* Monospace for that classic RFC look */
+        body {
+            font-family: monospace;
+            background-color: #f5f5f5; /* Light gray to mimic a paper-like backdrop */
+            margin: 0;
+            padding: 20px;
+        }
+
+        .rfc-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .rfc-header {
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .rfc-title {
+            font-size: 16px;
+            width: 400px;
+            background-color: green;
+            height: 200px;
+            margin: 0;
+            text-align: left;
+            max-width: 900px;
+            min-width: 900px
+            margin: 0 auto;
+            white-space: pre;
+        }
+
+        /* Old-school ASCII style horizontal rule */
+        .ascii-hr {
+            font-size: 0.9em;
+            color: #000;
+            margin: 20px 0;
+        }
+
+        .section-title {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .blog-post {
+            margin-bottom: 40px;
+        }
+
+        .blog-post-title {
+            font-size: 20px;
+            margin: 0;
+        }
+
+        .blog-post-date {
+            font-size: 14px;
+            color: #555;
+            margin: 5px 0 15px 0;
+        }
+
+        .blog-post-snippet {
+            margin-bottom: 10px;
+        }
+
+        .read-more {
+            text-decoration: none;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="rfc-container">
+        <!-- Header Section -->
+        <div class="rfc-header">
+            <h1 class="rfc-title">
+                 ____  _             
+                | __ )| | ___   __ _ 
+                |  _ \| |/ _ \ / _` |
+                | |_) | | (_) | (_| |
+                |____/|_|\___/ \__, |
+                                |___/ 
+            </h1>
+            <p><strong>Author:</strong> Antonio Example</p>
+        </div>
+
+        <!-- ASCII line -->
+        <div class="ascii-hr">----------------------------------------</div>
+
+        <div>
+            <p class="section-title">Welcome to My Blog</p>
+            <p>Here you'll find my latest posts, musings, and updates on cybersecurity, infrastructure, and more!</p>
+        </div>
+
+        <!-- ASCII line -->
+        <div class="ascii-hr">----------------------------------------</div>
+
+        <!-- Example Blog Post 1 -->
+        <div class="blog-post">
+            <h2 class="blog-post-title">Securing Your Home Network</h2>
+            <p class="blog-post-date">Published: April 10, 2025</p>
+            <p class="blog-post-snippet">
+                Learn the basics of network security at home by configuring routers, firewalls, and
+                best practices for protecting your local devices from unauthorized access.
+            </p>
+            <p>
+                <a class="read-more" href="#" target="_blank">Read More...</a>
+            </p>
+        </div>
+
+        <!-- Example Blog Post 2 -->
+        <div class="blog-post">
+            <h2 class="blog-post-title">Migrating to a Hardened Linux Server</h2>
+            <p class="blog-post-date">Published: March 14, 2025</p>
+            <p class="blog-post-snippet">
+                Follow my journey from a basic Linux installation to a fully hardened server environment.
+                Topics include system hardening, SELinux basics, intrusion detection, and more.
+            </p>
+            <p>
+                <a class="read-more" href="#" target="_blank">Read More...</a>
+            </p>
+        </div>
+
+        <!-- Example Blog Post 3 -->
+        <div class="blog-post">
+            <h2 class="blog-post-title">When to Trust the Cloud</h2>
+            <p class="blog-post-date">Published: February 20, 2025</p>
+            <p class="blog-post-snippet">
+                Exploring the trade-offs of storing your data in the cloud, comparing encryption options,
+                data sovereignty concerns, and privacy considerations.
+            </p>
+            <p>
+                <a class="read-more" href="#" target="_blank">Read More...</a>
+            </p>
+        </div>
+
+    </div>
+</body>
+</html>
+
