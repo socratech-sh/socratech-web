@@ -10,7 +10,16 @@ def health():
 
 @app.get("/")
 def render_links():
-    return render_template("links.html")
+    return render_template("index.html")
+
+@app.get("/blog")
+def render_blog():
+    return render_template("blog.html")
+
+
+@app.get("/timeline")
+def render_timeline():
+    return render_template("timeline.html")
 
 
 if __name__ == "__main__":
