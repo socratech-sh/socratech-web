@@ -1,4 +1,6 @@
 from flask import Flask, render_template
+import os
+
 
 app = Flask(__name__)
 
@@ -10,7 +12,21 @@ def health():
 
 @app.get("/")
 def render_links():
-    return render_template("index.html")
+    render_context = {
+#        #"hostpath": hostpath,
+        "articles": [
+            {
+                "title":"Proxmox for your homelab",
+                "link": "https://test.com"
+            },
+            {
+                "title":"Setting Up a Hardened Linux server",
+                "link": "https://test22.com"
+            },
+        ]
+    }
+    return render_template("index.html", **render_context)
+
 
 @app.get("/blog")
 def render_blog():
@@ -23,4 +39,4 @@ def render_timeline():
 
 
 if __name__ == "__main__":
-    app.run("0.0.0.0", "5000")
+    app.run("0.0.0.0", os.getenv("PORT"))

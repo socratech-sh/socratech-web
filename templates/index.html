@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>socratech.sh</title>
+    <link rel="icon" type="image/x-icon" href={{ url_for("static", filename="socratech.png") }}>
     <style>
-        /* Monospace for that classic RFC look */
-
         body {
             font-family: monospace;
-            background-color: #f5f5f5; /* Light gray to mimic a paper-like backdrop */
+            background-color: #f5f5f5; 
             margin: 0;
             font-size: 18px;
             padding: 10px;
@@ -20,7 +19,7 @@
         }
 
         .rfc-container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -36,7 +35,6 @@
             margin: 0;
         }
 
-        /* Old-school ASCII style horizontal rule */
         .ascii-hr {
             font-size: 0.9em;
             color: #000;
@@ -69,12 +67,20 @@
             list-style-type: disc;
             margin-left: 20px;
         }
+
+        .hero{
+            background-color: green;
+            width: 100%;
+            display:flex;
+        }
+
+        img{
+            height: 700px;
+        }
     </style>
 </head>
 <body>
     <div class="rfc-container">
-
-        <!-- Header Section -->
         <div class="rfc-header">
             <div class="ascii-literal">
  _____                      _            _     
@@ -84,15 +90,13 @@
 /\__/ / (_) | (__| | | (_| | ||  __/ (__| | | |
 \____/ \___/ \___|_|  \__,_|\__\___|\___|_| |_|
             </div>
-            <h1 class="rfc-title">Socratech</h1>
             <p><strong>Author:</strong> Antonio R</p>
         </div>
-
-        <div>
+      <div>
             <p class="section-title">Relevant Links:</p>
             <div class="social-links">
                 <ul>
-                    <li><strong>Blog:</strong> <a href="https://socratech.sh/blog" target="_blank">Blog</a></li>
+                    <li><strong>Blog:</strong> <a href="/blog">Blog</a></li>
                     <li><strong>GitHub:</strong> <a href="https://github.com/socratech-sh" target="_blank">socratech-sh</a></li>
                     <li><strong>Bluesky:</strong> <a href="https://bsky.app/profile/socratech.sh" target="_blank">@socratech.sh</a></li>
                     <li><strong>Reddit:</strong> <a href="https://www.reddit.com/user/socratech-sh/" target="_blank">u/socratech-sh</a></li>
@@ -103,25 +107,25 @@
 
         <div class="ascii-hr">----------------------------------------</div>
 
-        <!-- Blog Section -->
         <div>
             <p class="section-title">Latest Blog Posts:</p>
             <div class="blog-posts">
                 <ul>
-                    <li><a href="https://example.com/blog/journey-into-security" target="_blank">Proxmox for your homelab</a></li>
-                    <li><a href="https://example.com/blog/hardened-linux-server" target="_blank">Setting Up a Hardened Linux Server</a></li>
+                    {% for article in articles %}
+                        <li><a href={{ article.link }} target="_blank">{{ article.title }}</a></li>
+                    {% endfor %}
                 </ul>
             </div>
         </div>
 
 
-        <!-- Description Section -->
         <div>
             <p class="section-title">About me:</p>
-            <p>A quick introduction to my personal website, taking on the style of vintage RFCs.</p>
+                <p>A quick introduction to my personal website, taking on the style of vintage RFCs. <a href="/timeline">learn more...</a></p>
         </div>
 
         <div class="ascii-hr">----------------------------------------</div>
+            <img src={{ url_for("static", filename="socratech-nbg.png") }}
     </div>
 </body>
 </html>
