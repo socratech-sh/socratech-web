@@ -14,7 +14,6 @@ def health():
 @app.get("/")
 def render_links():
     latest_posts = find_newest_posts("./posts")
-
     render_context = {
         "articles": [
             {"title": extract_post_title(post), "link": f"/blog/{post}"}
