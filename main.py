@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from utils import find_newest_posts, extract_post_title
 import os
 
 
@@ -12,17 +13,12 @@ def health():
 
 @app.get("/")
 def render_links():
+    latest_posts = find_newest_posts("./posts")
+
     render_context = {
-#        #"hostpath": hostpath,
         "articles": [
-            {
-                "title":"Proxmox for your homelab",
-                "link": "https://test.com"
-            },
-            {
-                "title":"Setting Up a Hardened Linux server",
-                "link": "https://test22.com"
-            },
+            {"title": extract_post_title(post), "link": f"/blog/{post}"}
+            for post in latest_posts
         ]
     }
     return render_template("index.html", **render_context)

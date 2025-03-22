@@ -96,7 +96,9 @@
             <p class="section-title">Relevant Links:</p>
             <div class="social-links">
                 <ul>
-                    <li><strong>Blog:</strong> <a href="/blog">Blog</a></li>
+                    {% if articles|length > 0 %}
+                        <li><strong>Blog:</strong> <a href="/blog">Blog</a></li>
+                    {% endif %}
                     <li><strong>GitHub:</strong> <a href="https://github.com/socratech-sh" target="_blank">socratech-sh</a></li>
                     <li><strong>Bluesky:</strong> <a href="https://bsky.app/profile/socratech.sh" target="_blank">@socratech.sh</a></li>
                     <li><strong>Reddit:</strong> <a href="https://www.reddit.com/user/socratech-sh/" target="_blank">u/socratech-sh</a></li>
@@ -112,18 +114,19 @@
         </div>
         <div class="ascii-hr">----------------------------------------</div>
 
-        <div>
-            <p class="section-title">Latest Blog Posts:</p>
-            <div class="blog-posts">
-                <ul>
-                    {% for article in articles %}
-                        <li><a href={{ article.link }} target="_blank">{{ article.title }}</a></li>
-                    {% endfor %}
-                </ul>
+        {% if articles|length > 0 %}
+            <div>
+                <p class="section-title">Latest Blog Posts:</p>
+                <div class="blog-posts">
+                    <ul>
+                        {% for article in articles %}
+                            <li><a href={{ article.link }} target="_blank">{{ article.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
             </div>
-        </div>
-        <div class="ascii-hr">----------------------------------------</div>
-
+            <div class="ascii-hr">----------------------------------------</div>
+        {% endif %}
         <img src={{ url_for("static", filename="socratech-nbg.png") }}
     </div>
 </body>
