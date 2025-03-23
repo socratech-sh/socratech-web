@@ -1,0 +1,1 @@
+(".gitignore" "Dockerfile" "main.py" "remove_white.py" "requirements.txt" "static/Socratech-n.png" "static/socratech-nbg.png" "static/socratech.png" "templates/blog.html" "templates/index.html" "templates/timeline.html" "title-for-post_day-month-year(4d).md" "utils.py")
