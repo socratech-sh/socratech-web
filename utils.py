@@ -17,13 +17,16 @@ def extract_post_title(post: str) -> str:
 
 
 def find_newest_posts(path: str, limit: int = 3) -> list[int]:
-    posts = os.listdir(path)
+    posts = []
+    if os.path.exists(path):
+        posts = os.listdir(path)
 
-    if not len(posts):
-        return []
+        if len(posts):
+            posts = sorted(
+                posts,
+                key=extract_post_date,
+                reverse=True
+            )[: limit]
 
-    return sorted(
-        posts,
-        key=extract_post_date,
-        reverse=True
-    )[: limit]
+    return posts
+
