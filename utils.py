@@ -4,7 +4,7 @@ import re
 
 
 def extract_post_date(post: str) -> datetime.date:
-    match = re.search(r"(\d{2})-(\d{2})-(\d{4})\.md$", post)
+    match = re.search(r"(\d{2})-(\d{2})-(\d{4})\.html$", post)
     if match:
         day, month, year = match.groups()
         return datetime(int(year), int(month), int(day))
@@ -19,7 +19,8 @@ def extract_post_title(post: str) -> str:
 def find_newest_posts(path: str, limit: int = 3) -> list[int]:
     posts = []
     if os.path.exists(path):
-        posts = os.listdir(path)
+
+        posts = [post for post in os.listdir(path) if "html" in post]
 
         if len(posts):
             posts = sorted(
